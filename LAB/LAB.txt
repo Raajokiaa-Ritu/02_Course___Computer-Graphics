@@ -1,0 +1,4 @@
+line draw using building function
+line draw - direct method
+line draw - DDA
+line draw - bresenham
