@@ -19,28 +19,29 @@ int main()
 
     float m = dy /dx;
 
-    if(m > 1)
-    {
-        x = x1 + (1/m);
-        y = y1 + 1;
-        steps = y2;
+    ///konta small? x1 or x2?
+    if(dx < 0){
+        x = x2; y = y2;
+    }
+    else{ ///if dx>0
+        x = x1; y = y1;
+    }
 
-        while(i <= steps)
-        {
-            putpixel(x, y, GREEN);
+    if(m > 1){
+        steps = abs(y2-y1);
+        int i = 1;
+        while(i <= steps){
+            putpixel(x, y, WHITE);
             x = x + (1/m);
             y = y + 1;
             i++;
         }
     }
-    else
-    {
-        x = x1 + 1;
-        y = y1 + m;
-        steps = x2;
-        while(i <= steps)
-        {
-            putpixel(x, y, GREEN);
+    else{
+        steps = abs(x2-x1);
+        int i = 1;
+        while(i <= steps){
+            putpixel(x, y, WHITE);
             x = x + 1;
             y = y + m;
             i++;
